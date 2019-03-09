@@ -25,12 +25,17 @@ contract Roulette is Ownable{
         contractStoreAmount = contractStoreAmount.add(msg.value);
     }
 
+    function withdraw(uint _amount) external payable onlyOwner() {
+        require(_amount < contractStoreAmount);
+        msg.sender.transfer(_amount);
+    }
+
     function getResult(uint8 _bet) public payable{
         uint8 randNum = getRandomNum();
         judgeResult(_bet, randNum);
     }
 
-    function judgeResult(uint8 _bet, uint8 _randNum) public payable{
+    function judgeResult(uint8 _bet, uint8 _randNum) internal{
         uint betAmount = msg.value;
         uint returnAmount;
         uint8 randNum = _randNum;
