@@ -11,6 +11,7 @@ For instance, if you bet a number and you won, you would get 32 times as much et
 1. Click what you want to bet on the table.
 2. Bet ether. It must be from 0.01 ether to 0.03 ether.
 3. Press the start button. When the transaction is confirmed, the roulette will run.
+* Use Ropsten acccount for this dapp.
 
 ## Licence
 MIT
